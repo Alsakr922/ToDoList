@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "ZCOOL XiaoWei", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+:root {
+    --toastify-color-light: @apply text-primary-500;
+    --toastify-text-color-light: @apply text-primary-500;
+}
+html {
+  scroll-behavior: smooth;
+}
+.cubic {
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@layer utilities {
+  .btn {
+    @apply py-2 px-8 text-black rounded-none border border-primary-400 transition-all focus:outline-none bg-transparent;
+  }
+
+  .btn:hover {
+    @apply bg-primary-400 text-white border-primary-400;
+  }
+  .btnOutline {
+    @apply text-black border border-primary-400 transition-all focus:outline-none bg-transparent rounded-none;
+  }
+
+  .btnOutline:hover {
+    @apply bg-transparent bg-primary-500 border-transparent text-white;
+  }
+
+  .forms {
+    @apply w-full outline-none border-none my-3 py-2 px-6 rounded-none text-[20px];
+  }
+
+  .max-container {
+    @apply mx-auto max-w-[1440px];
+  }
+
+  .padding-container {
+    @apply px-6 lg:px-20 3xl:px-0;
+  }
+
+  .flexCenter {
+    @apply flex items-center justify-center;
+  }
+
+  .flexBetween {
+    @apply flex items-center justify-between;
+  }
+
+  .flexStart {
+    @apply flex items-start justify-start;
+  }
+
+  .flexEnd {
+    @apply flex items-end justify-end;
+  }
+
+  /* FONTS */
+  .regular-64 {
+    @apply text-[64px] font-[400] leading-[120%];
+  }
+
+  .regular-50 {
+    @apply text-[50px] font-[400] leading-[120%];
+  }
+  .regular-40 {
+    @apply text-[40px] font-[400] leading-[120%];
+  }
+
+  .regular-32 {
+    @apply text-[32px] font-[400];
+  }
+
+  .regular-24 {
+    @apply text-[24px] font-[400];
+  }
+
+  .regular-20 {
+    @apply text-[20px] font-[400];
+  }
+
+  .regular-18 {
+    @apply text-[18px] font-[400];
+  }
+
+  .regular-16 {
+    @apply text-[16px] font-[400];
+  }
+
+  .regular-14 {
+    @apply text-[14px] font-[400];
+  }
+
+  .medium-14 {
+    @apply text-[14px] font-[600];
+  }
+
+  .bold-88 {
+    @apply text-[88px] font-[700] leading-[120%];
+  }
+
+  .bold-64 {
+    @apply text-[64px] font-[700] leading-[120%];
+  }
+
+  .bold-52 {
+    @apply text-[52px] font-[700] leading-[120%];
+  }
+
+  .bold-40 {
+    @apply text-[40px] font-[700] leading-[120%];
+  }
+
+  .bold-32 {
+    @apply text-[32px] font-[700] leading-[120%];
+  }
+
+  .bold-20 {
+    @apply text-[20px] font-[700];
+  }
+
+  .bold-18 {
+    @apply text-[18px] font-[700];
+  }
+
+  .bold-16 {
+    @apply text-[16px] font-[700];
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
