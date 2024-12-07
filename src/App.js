@@ -15,7 +15,7 @@ function App() {
   const editRef = useRef();
 
   const add = () => {
-    if(Task.length === 8){
+    if (Task.length === 8) {
       toast.error("Maximum tasks reached!", {
         position: "top-center",
         autoClose: 2000,
@@ -26,28 +26,24 @@ function App() {
         progress: undefined,
       });
       return;
-
     }
     const task = ref.current.value;
     const newTask = { completed: false, value: task, isEdited: false };
     setTask([...Task, newTask]);
-    const notifyAdded = () => toast("task is added");
+    toast("task is added");
     ref.current.value = "";
-    notifyAdded();
   };
   const completed = (index) => {
     const newTasks = [...Task];
     newTasks[index].completed = !newTasks[index].completed;
-    const notifyCompleted = () => toast("task is completed");
     setTask(newTasks);
-    notifyCompleted();
+    toast("task is completed");
   };
   const del = (index) => {
     const newTasks = [...Task];
     newTasks.splice(index, 1);
     setTask(newTasks);
-    const notifyDelted = () => toast("Task is Deleted");
-    notifyDelted();
+    toast("task is deleted");
   };
   const isEditedValue = (index) => {
     const newTasks = [...Task];
@@ -61,12 +57,11 @@ function App() {
     newTasks[index].value = editValue;
     newTasks[index].isEdited = !newTasks[index].isEdited;
     setTask(newTasks);
-    const notifyEdited = () => toast("Task is Edited");
-    notifyEdited();
+    toast("Task is Edited");
   };
   return (
     <>
-      <ToastContainer theme="light" />
+      <ToastContainer theme="dark" hideProgressBar={true} autoClose={'2000'} />
       <div className="bg-primary-100 absolute border border-primary-300 rounded-3xl  py-10 px-5 h-[600px] w-[400px] top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] ">
         <h1 className="regular-64 flexCenter ">
           To <span className="text-primary-400">Do</span> List
@@ -88,9 +83,7 @@ function App() {
             return (
               <div className="flex items-center gap-2 border-b border-b-primary-700 pb-2">
                 {task.isEdited ? (
-                  <IoWarning
-                    className="text-black flexCenter self-end justify-self-end cursor-pointer"
-                  />
+                  <IoWarning className="text-black flexCenter self-end justify-self-end cursor-pointer" />
                 ) : task.completed ? (
                   <IoMdCheckmarkCircle
                     onClick={() => completed(index)}
